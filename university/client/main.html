@@ -2,15 +2,23 @@
   <title>University</title>
 </head>
 
-<body>
+<body class="container">
   {{> nav}}
+
   <h1>University Interface</h1>
 
 
 </body>
 <template name="nav">
-  <a href="/">Home</a>
-  <a href="/courses">Courses</a>
-  <a href="/professors">Professors</a>
-  <a href="/sections">Sections</a>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <p class="navbar-text"><a href="/">Home</a></p>
+          <p class="navbar-text"><a href="/courses">Courses</a></p>
+          <p class="navbar-text"><a href="/professors">Professors</a></p>
+          <p class="navbar-text"><a href="/sections">Sections</a></p>
+      </div>
+    </div>
+</nav>
+
 </template>
