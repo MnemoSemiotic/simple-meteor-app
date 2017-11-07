@@ -1,0 +1,20 @@
+<template name="showCourses">
+  <div>
+    <table>
+      <tr>
+        <td>Course Name</td>
+        <td>Course Description</td>
+        <td># Credit Hours</td>
+      </tr>
+      {{#each course in getCourses}}
+      <tr>
+        <td>{{course.coursename}}</td>
+        <td>{{course.coursedescription}}</td>
+        <td>{{course.credithours}}</td>
+      </tr>
+      {{/each}}
+    </table>
+
+    <a href="/courses/addcourse">Add New Course</a>
+  </div>
+</template>

@@ -13,4 +13,4 @@ Template.addCourse.events({
 
     Router.go('/courses');
   }
-})
+});
