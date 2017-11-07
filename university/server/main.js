@@ -34,7 +34,23 @@ Meteor.methods({
 
       console.log("Professor Added");
     }
-  }
+  },
+
+  addSection: function (sectionInput) {
+
+    console.log("addSection was called");
+    console.log(sectionInput);
+
+    if (sectionInput.sectionnumber > 0
+      && sectionInput.course.length > 0
+      && sectionInput.professor.length > 0) {
+
+        sectionInput.createdAt = new Date();
+        SectionInfo.insert(sectionInput);
+
+        console.log("Section added");
+      }
+    }
 });
 
 // Publish courses
@@ -47,7 +63,12 @@ Meteor.publish("professors", function () {
   return ProfessorInfo.find();
 })
 
-// Utility to add entities to DB
+// Publish sections
+Meteor.publish("sections", function () {
+  return SectionInfo.find();
+})
+
+// Utility to add entities to DB, duplicated in collections.js
 collections = {};
 
 function makeCollection(name) {
@@ -57,3 +78,4 @@ function makeCollection(name) {
 
 CourseInfo = makeCollection("CourseInfo");
 ProfessorInfo = makeCollection("ProfessorInfo");
+SectionInfo = makeCollection("SectionInfo");

@@ -1,0 +1,20 @@
+<template name="showSections">
+  <h2>Sections</h2>
+  <div>
+    <table>
+      <tr>
+        <td>Section Number:</td>
+        <td>Course:</td>
+        <tb>Professor:</tb>
+      </tr>
+      {{#each section in getSections}}
+      <tr>
+        <td>{{section.sectionnumber}}</td>
+        <td>{{getCourse(section.course)}}</td>
+        <td>{{getProfessor(section.professor)}}</td>
+      </tr>
+      {{/each}}
+    </table>
+    <a href="/sections/addsection">Add New Section</a>
+  </div>
+</template>

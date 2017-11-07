@@ -8,3 +8,4 @@ function makeCollection(name) {
 
 CourseInfo = makeCollection("CourseInfo");
 ProfessorInfo = makeCollection("ProfessorInfo");
+SectionInfo = makeCollection("SectionInfo");

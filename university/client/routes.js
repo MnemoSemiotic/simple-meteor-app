@@ -20,4 +20,17 @@ if (Meteor.isClient) {
   Router.route("/professors/addprofessor", function () {
     this.render("addProfessor");
   })
+
+  Router.route("/sections", function () {
+      Meteor.subscribe("sections");
+      Meteor.subscribe("professors");
+      Meteor.subscribe("courses");
+      this.render("showSections");
+  })
+
+  Router.route("/sections/addsection", function () {
+        Meteor.subscribe("courses");
+        Meteor.subscribe("professors");
+        this.render("addSection");
+  })
 }
