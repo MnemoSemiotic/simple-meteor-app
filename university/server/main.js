@@ -5,49 +5,36 @@ Meteor.startup(() => {
 });
 
 Meteor.methods({
-
   addCourse: function (courseInput) {
-
-    console.log("addCourse was called");
+    console.log("addCourse:");
     console.log(courseInput);
-
     if (courseInput.coursename.length > 0
       && courseInput.coursedescription.length > 0
       && courseInput.credithours > 0) {
-
-      courseInput.createdAt = new Date();
-      CourseInfo.insert(courseInput);
-
+        courseInput.createdAt = new Date();
+        CourseInfo.insert(courseInput);
       console.log("Course added.");
     }
   },
 
   addProfessor: function (professorInput) {
-
-    console.log("addProfessor was called");
+    console.log("addProfessor:");
     console.log(professorInput);
-
     if (professorInput.professorname.length > 0) {
-
       professorInput.createdAt = new Date();
       ProfessorInfo.insert(professorInput);
-
       console.log("Professor Added");
     }
   },
 
   addSection: function (sectionInput) {
-
-    console.log("addSection was called");
+    console.log("addSection:");
     console.log(sectionInput);
-
     if (sectionInput.sectionnumber > 0
       && sectionInput.course.length > 0
       && sectionInput.professor.length > 0) {
-
         sectionInput.createdAt = new Date();
         SectionInfo.insert(sectionInput);
-
         console.log("Section added");
       }
     }
