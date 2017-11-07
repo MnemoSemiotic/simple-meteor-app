@@ -11,4 +11,13 @@ if (Meteor.isClient) {
   Router.route("/courses/addcourse", function() {
     this.render("addCourse");
   })
+
+  Router.route("/professors", function () {
+    Meteor.subscribe("professors");
+    this.render("showProfessors");
+  })
+
+  Router.route("/professors/addprofessor", function () {
+    this.render("addProfessor");
+  })
 }

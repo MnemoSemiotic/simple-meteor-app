@@ -7,3 +7,4 @@ function makeCollection(name) {
 }
 
 CourseInfo = makeCollection("CourseInfo");
+ProfessorInfo = makeCollection("ProfessorInfo");

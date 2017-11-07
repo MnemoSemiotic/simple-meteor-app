@@ -1,0 +1,14 @@
+<template name="showProfessors">
+  <h2>Professors</h2>
+    <table>
+        <tr>
+            <td>Name:</td>
+        </tr>
+        {{#each professor in getProfessors}}
+            <tr>
+                <td>{{professor.professorname}}</td>
+            </tr>
+        {{/each}}
+    </table>
+    <a href="/professors/addprofessor">Add New Professor</a>
+</template>
